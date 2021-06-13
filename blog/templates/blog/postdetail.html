@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ post.title }} - Blog
+{% endblock %}
+{% block styles %}
+<style>
+    *{
+        font-family: 'poppins';
+    }
+    .contentx h1{
+        text-align: center;
+    }
+    .contentx p {
+        text-align: justify;
+
+    }
+    .contentx{
+        padding-top: 100px;
+    }
+    .data{
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="container contentx">
+    <h1>{{ post.title }}</h1>
+    <div class="image">
+        <img src="{{post.image.url}}" height="75%" width="75%" style="margin: auto; display: table; margin-bottom: 60px; margin-top: 60px;">
+    </div>
+    <div class="data">
+        <p>{{ post.content }}</p>
+    </div>
+</div>
+{% endblock %}
