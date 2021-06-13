@@ -1,0 +1,38 @@
+
+{% extends "base.html" %}
+{% block title %}To Do List{% endblock %}
+{% block header %}
+<link href="/static/style.css" rel="stylesheet">
+{% endblock %}
+{% block styles %}
+<style>
+    @media (min-width: 992px){
+        .navbar-expand-lg .navbar-collapse{
+            flex: revert;
+        }
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div id="main_div" class="container-fluid" >
+    <h1>To Do List</h1>
+    <div id="forms">
+        <center>
+
+            <input id="bar" type="text">
+            <button id="sumbit">add</button>
+
+        </center>
+    </div>
+    <div id="list">
+        <ul id="items">
+
+        </ul>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+<script type="text/javascript" src="/static/script.js"></script>
+{% endblock %}
+
+

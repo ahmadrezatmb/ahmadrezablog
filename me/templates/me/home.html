@@ -1,0 +1,178 @@
+
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+{% block styles %}
+<style>
+*{
+        font-family: 'Poppins';
+    }
+    @media (min-width: 992px){
+        .navbar-expand-lg .navbar-collapse{
+            flex: revert;
+        }
+        
+        
+    }
+    
+    .first-wallpaper{
+        
+        height:  500px;
+        background-size: 400px 400px;
+        background-image: url('/static/intro.jpg');
+        margin-right: 0;
+        margin-bottom: 0;
+        overflow: hidden;
+        padding-right: 0;
+    } 
+    .discovermorebtn{
+      text-decoration: none;
+      border-style: solid;
+      border-color: black;
+      border-width: 2px;
+      color: white;
+      background-color: black;
+      border-radius: 20px;
+      padding: 10px; 
+      transition: all 0.75s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5 ease;     
+    }
+    .discovermorebtn:hover{
+      text-decoration: none;
+      background-color: white;
+      color: black;
+      border-style: solid;
+      border-color: black;
+      border-width: 2px;
+    }
+    .checktheblog{
+      text-decoration: none;
+      border-style: solid;
+      border-color: white;
+      border-width: 2px;
+      color: white;
+      background-color: black;
+      border-radius: 20px;
+      padding: 10px;
+      margin: auto;
+      display: table;
+      
+      transition: all 0.75s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5 ease;
+    }
+    .checktheblog:hover{
+      text-decoration: none;
+      background-color: white;
+      color: black;
+      border-style: solid;
+      border-color: black;
+      border-width: 2px;
+    }
+    .todolistdiv{
+      background-image: url('/static/back.jpg');
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    .tooldivtrans{
+      background-color: rgba(255, 255, 255, 0.699);
+      
+    }
+    .emailset{
+      background-image: url('/static/email.jpg');
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    .email{
+      margin-bottom: 20px;
+      border-radius: 20px;
+      border-style: solid;
+      border-width: 2px;
+      border-color: black;
+      width: calc(100% - 150px);
+      
+    }
+    .body{
+      height: 300px;
+      margin-right: -20px;
+    }
+    .row{
+      margin-right: 0 !important;
+      margin-left: 0 !important;
+    }
+    .fullscreen {
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+    }
+</style>
+{% endblock %}
+
+{% block content%}
+<div class="container-fluid fullscreen" >
+  <div class="row" >
+      <div class="container-fluid fullscreen" >
+          <div class="row" >
+              <div class="col-sm-6 fullscreen" style="text-align: center; padding:0;">
+                <div class="seperator" style="width: 100%; height: 200px;"></div>
+                <h2>Welcome to my personal website</h2><br><br>
+                <a href="{% url 'info' %}" class="discovermorebtn">Dicover more</a>
+                <div class="seperator" style="width: 100%; height: 100px;"></div>
+              </div>
+              <div class="col-sm-6 fullscreen">
+                <figure class="first-wallpaper"></figure>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="container-fluid" style="padding: 0; background-color: black; padding-top: 120px; padding-bottom: 120px;">
+  <div class="row">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <h2 style="text-align: center; color: white; margin-bottom: 60px;">check out my personal blog</h2>
+          <a href="{% url 'blogHomePage' %}" class="checktheblog">Check out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid todolistdiv">
+  <div class="row tooldivtrans"  style=" padding-top: 120px; padding-bottom: 90px; margin-left: 0; margin-right: 0;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <h2 style="text-align: center; opacity: 100% !important; margin-bottom: 30px;">Use my To do list app to manage<br> your time</h2>
+          <a href="{% url 'todolist' %}" class="checktheblog">Check out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid emailset">
+  <div class="row tooldivtrans"  style="padding-top: 120px; padding-bottom: 90px;">
+    <div class="container-fluid" >
+      <div class="row">
+        <div class="col-sm">
+          <h2 class="emailtitle" style="text-align: center; opacity: 100% !important; margin-bottom: 30px;">Send an email :</h2>
+        </div>
+        <div class="col-sm" style="text-align: center;">
+          <!-- <form action="" method="POST">
+            <span>subject :</span>
+            <input type="text" class="email subject" placeholder="subject..."><br>
+            <span>body :   </span>
+            <input type="text" class="email body" placeholder="body..."><br>
+            <input class="discovermorebtn" type="submit">
+          </form> -->
+          <h3>ahmadreza.tmb@gmail.com</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

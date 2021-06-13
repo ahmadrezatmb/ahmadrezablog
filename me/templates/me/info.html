@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+{% block  title %}
+about me
+{% endblock %}
+{% block styles %}
+<style>
+    *{
+        font-family: 'poppins';
+    }
+    .footer{
+        background-color: #2E90A1 !important;
+        color: white !important;
+    }
+    .myheader{
+        background-color: #2E90A1 !important;
+        color: white !important;
+    }
+    .navbar-brand{
+        color: white !important;
+    }
+    .active {
+        color: white !important;
+    }
+    .dropdown-menu{
+        background-color: #2E90A1 !important;
+        color: white !important;
+    }
+    .dropdown-item{
+        color: white !important;
+    }
+    .dropdown-item:hover {
+        color: #1C5762 !important;
+    }
+    .progress{
+        height: 19px;
+        background-color: white;
+        border-radius: 20px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: white;
+    }
+    .progressborder{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        height: 20px;
+        width: 100%;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 20px;
+        border-color: white;
+    }
+    .skillbar{
+        margin-top: 40px;
+        margin-bottom: 40px;
+        color: white;
+    }
+    .seperator{
+        border-top-style: solid;
+        border-top-color: white;
+        border-top-width: 3px;
+        width: 75%;
+        margin: auto;
+        
+        margin-bottom: 30px;
+    }
+    .topics {
+        text-align: center;
+    }
+    .movie{
+        width: 80%;
+        height: 500px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: auto;
+    }
+
+    .bookfav {
+        margin-bottom: 20px;
+    }
+    #contactme {
+        color: white;
+    }
+    #contactme a {
+        color: #44D5EE;
+    }
+
+    #contactme a:hover {
+        color: #006e81;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid" style="background-color: #1C5762;">
+    <div class="row">
+        <div class="container-fluid" id="skills">
+            <div class="row" style="padding-top: 140px; padding-right: 30px; padding-left: 30px;">
+                <h1 style="text-align: center; color: white;">skills</h1>
+                {% for code in  topic %}
+                    <div class="col-sm-4 skillbar">
+                        <div class="progressborder">
+                            <div class="progress" style="width: {{ code.darsad }}% ;">
+                            </div>
+                        </div>
+                        <div class="topics">
+                            <h3>{{ code.title }} : {{ code.darsad }}%</h3>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="seperator"></div>
+
+        <div class="container-fluid bookfav" id="favorites">
+            <div class="row">
+                
+                <h2 style="text-align: center; color: white; margin-top: 30px; margin-bottom: 50px;">favorite books</h2>
+                <div class="row favorits">
+                    {% for book in book%}
+                    <div class="col-sm-4">
+                        <figure class="movie" style="background-image: url('{{ book.image.url }}');"></figure>
+                        <h3 style="text-align: center; color: white; margin-top: 30px; margin-bottom: 50px;" >{{ book.title }}</h3>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="seperator"></div>
+        <div class="container-fluid">
+            <div class="row">
+                
+                <h2 style="text-align: center; color: white; margin-top: 30px; margin-bottom: 50px;">favorite movies</h2>
+                <div class="row favorits">
+                    {% for movie in movie%}
+                    <div class="col-sm-4">
+                        <figure class="movie" style="background-image: url('{{ movie.image.url }}');"></figure>
+                        <h3 style="text-align: center; color: white; margin-top: 30px; margin-bottom: 50px;" >{{ movie.title }}</h3>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="seperator"></div>
+        <div class="container-fluid" id="contactme">
+            <div class="row">
+                <h2 style="text-align: center;">contact me</h2>
+                <div class="col-sm-6" style="padding-left:60px; padding-top: 40PX; padding-bottom: 50px;">
+                    <h3>phone : <a href="tel:+9899123776">+9899123776</a></h3>
+                    <h3>email : ahmadreza.tmb@gmail.com</h3>
+                    <h3>instagram : <a href="https://instagram.com/ahmadreza_tmb">click here</a></h3>
+                    <h3>telegram : <a href="https://t.me/ahmadreza_tmb">click here</a></h3>
+                </div>
+                <div class="col-sm-6" style="text-align: center; padding-top: 40PX;">
+                    <p style="font-size: 28px;">As the world becomes a more digital place, we cannot forget about the human connection.</p>
+                    <h4>- Adam Neumann</h4>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
